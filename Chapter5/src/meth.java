@@ -1,32 +1,70 @@
 import javax.swing.JOptionPane;
-public class meth { public static void main (String[] args){
+public class meth {
+    public static void main (String[] args){
+        String strName;
+        int intAge;
 
-//printHello is a no-arg METHOD to display hello
 
-//printNameAge is a VOID METHOD to display user's name and age
+        //Get name and age
+        strName = JOptionPane.showInputDialog("What is your name?");
+        intAge = Integer.parseInt(JOptionPane.showInputDialog("What is your age?"));
 
-//calcAge is a VALUE RETURNING METHOD to calculate age in 100 yea
-            //create world and turtle
-            /*
-            World w = new World(800, 600);
-            Turtle t = new Turtle(w);
-            t.forward();
-            t.turn(90);
-            */
+        //call method
+        displayHello();
+        //arguments are value passed to a method
+        displayUsername(strName, intAge);
 
-            String strName;
-            int intAge;
+        String myUi;
 
-            //Get name and age
-            strName = JOptionPane.showInputDialog("What is your name?");
-            intAge = Integer.parseInt(JOptionPane.showInputDialog("What is your age?"));
+        myUi = s("Name");
 
-            //Back at main
-            System.out.println("Back at the main method");
+        s("Age");
+        s("Address");
 
-            //end program
-            //System.exit(0);
+        //Back at main
+        System.out.println("Back at the main method");
+
+
+        //end program
+        //System.exit(0);
     }
+
+
+    //no argument void method
+    //does not return a value
+    // display hello
+    public static void displayHello(){
+        System.out.println("Hello World");
+
+    }
+
+    //Runs code and returns value
+    //replace void with data type returned
+    //needs return statement
+    public static String s(String prompt) {
+
+        String ui;
+        ui = JOptionPane.showInputDialog(prompt);
+        ageupdate(ui);
+
+
+
+        return ui;
+    }
+
+    //Method to display users name and age
+    //Parameters are received
+    //args and params data type must match
+    public static void displayUsername(String strUsername, int intUserAge){
+        JOptionPane.showMessageDialog(null, "Your name is "+strUsername+"\nYour age is "+intUserAge);
+    }
+
+    public static String ageupdate(String userAge){
+
+
+        System.out.println("In 100 yrs you will be ");// + (Integer.parseInt(userAge) + 100));
+
+        return "";
+    }
+
 }
-
-
